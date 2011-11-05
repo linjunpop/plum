@@ -4,7 +4,7 @@
   <title><![CDATA[Jun.Blog]]></title>
   <link href="http://iodot.heroku.com/atom.xml" rel="self"/>
   <link href="http://iodot.heroku.com/"/>
-  <updated>2011-10-25T22:29:30+08:00</updated>
+  <updated>2011-11-05T20:48:49+08:00</updated>
   <id>http://iodot.heroku.com/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Backbone.js and Rails]]></title>
+    <link href="http://iodot.heroku.com/blog/2011/11/05/backbone-dot-js-and-rails/"/>
+    <updated>2011-11-05T20:33:00+08:00</updated>
+    <id>http://iodot.heroku.com/blog/2011/11/05/backbone-dot-js-and-rails</id>
+    <content type="html"><![CDATA[<p>a Backbone.js and Rails talk, by <a href="http://jayunit.net">Jason Morrison</a>, the resources: <a href="">http://jayunit.net/2011/09/25/backbone-js-on-rails-talk/</a></p>
+
+<p>And there is <a href="http://workshops.thoughtbot.com/backbone-js-on-rails">an ebook</a> about Backbone.js on Rails</p>
+
+<iframe src="http://player.vimeo.com/video/30471876?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+
+
+<p><a href="http://vimeo.com/30471876">Backbone.js and Rails</a> from <a href="http://vimeo.com/bostonrb">BostonRB</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[jQuery Tablesorter Gem for Rails 3.1]]></title>
