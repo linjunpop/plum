@@ -9,7 +9,7 @@
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="a Backbone.js and Rails talk, by Jason Morrison, the resources: http://jayunit.net/2011/09/25/backbone-js-on-rails-talk/ And there is an ebook about &hellip;">
+  <meta name="description" content="install the gems group :development, :test do gem 'jasminerice' gem 'guard' gem 'guard-rspec' gem 'guard-jasmine' # for mac gem 'rb-fsevent', : &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -62,6 +62,111 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/">Testing CoffeeScript on Rails 3.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-06T10:11:00+08:00" pubdate>Nov 6<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>install the gems</h2>
+
+<hr />
+
+<pre><code>    group :development, :test do
+        gem 'jasminerice'
+        gem 'guard'
+        gem 'guard-rspec'
+        gem 'guard-jasmine'
+        # for mac
+        gem 'rb-fsevent', :require =&gt; false
+        gem 'growl_notify', :require =&gt; false # or gem 'growl'
+        # for linux
+        gem 'rb-inotify', :require =&gt; false
+        gem 'libnotify', :require =&gt; false
+    end
+</code></pre>
+
+<h2>Init</h2>
+
+<hr />
+
+<p>Add guard definition to your <code>Guardfile</code> by running this command:</p>
+
+<pre><code>    $ guard init jasmine
+</code></pre>
+
+<p>and add a route for the Jasmine Test Runner to <code>config/routes.rb</code>:</p>
+
+<pre><code>    if ["development", "test"].include? Rails.env
+      mount Jasminerice::Engine =&gt; "/jasmine"
+    end
+</code></pre>
+
+<p>Next you create the directory <code>spec/javascripts</code> where your CoffeeScript tests go into. You define the Rails 3.1 asset pipeline manifest in <code>spec/javascripts/spec.js.coffee</code>:</p>
+
+<pre><code>    #=require_tree ./
+</code></pre>
+
+<h2>Install <code>phantomjs</code> (headless WebKit with JavaScript API)</h2>
+
+<hr />
+
+<p>With <code>Homebrew</code> on Mac OS X and install it with:</p>
+
+<pre><code>    $ brew install phantomjs
+</code></pre>
+
+<p>for Ubuntu, you can install it with apt:</p>
+
+<pre><code>    $ sudo add-apt-repository ppa:jerome-etienne/neoip
+    $ sudo apt-get update
+    $ sudo apt-get install phantomjs
+</code></pre>
+
+<h2>Run the test</h2>
+
+<hr />
+
+<p>run the following command on your terminal, and you will see the result.</p>
+
+<pre><code>    $ guard
+</code></pre>
+
+<h2>refs</h2>
+
+<hr />
+
+<p><a href="https://github.com/netzpirat/guard-jasmine">https://github.com/netzpirat/guard-jasmine</a></p>
+
+<p><a href="https://github.com/bradphelan/jasminerice">https://github.com/bradphelan/jasminerice</a></p>
+
+<p><a href="http://code.google.com/p/phantomjs/">http://code.google.com/p/phantomjs/</a></p>
+
+<p><a href="https://github.com/guard/guard">https://github.com/guard/guard</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -148,6 +253,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/">Testing CoffeeScript on Rails 3.1</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/11/05/backbone-dot-js-and-rails/">Backbone.js and Rails</a>

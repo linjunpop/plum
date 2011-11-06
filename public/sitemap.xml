@@ -8,14 +8,18 @@
     </url>
     <url>
         <loc>http://iodot.heroku.com/blog/2011/11/05/backbone-dot-js-and-rails/</loc>
-        <lastmod>2011-11-05T20:47:23+08:00</lastmod>
+        <lastmod>2011-11-06T10:14:59+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iodot.heroku.com/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/</loc>
+        <lastmod>2011-11-06T10:14:38+08:00</lastmod>
     </url>
     <url>
         <loc>http://iodot.heroku.com/blog/archives/</loc>
-        <lastmod>2011-11-05T20:47:23+08:00</lastmod>
+        <lastmod>2011-11-06T10:14:59+08:00</lastmod>
     </url>
     <url>
         <loc>http://iodot.heroku.com/</loc>
-        <lastmod>2011-11-05T20:47:23+08:00</lastmod>
+        <lastmod>2011-11-06T10:14:59+08:00</lastmod>
     </url>
 </urlset>

@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Jun.Blog</title>
+  <title>Testing CoffeeScript on Rails 3.1 - Jun.Blog</title>
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="Blog Archive 2011 Testing CoffeeScript on Rails 3.1
-Nov 06 2011 posted in coffeescript, rails, rspec, testing Backbone.js and Rails
-Nov 05 2011 &hellip;">
+  <meta name="description" content="install the gems group :development, :test do gem 'jasminerice' gem 'guard' gem 'guard-rspec' gem 'guard-jasmine' # for mac gem 'rb-fsevent', : &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Nov 05 2011 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://iodot.heroku.com/blog/archives">
+  <link rel="canonical" href="http://iodot.heroku.com/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,60 +61,159 @@ Nov 05 2011 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Testing CoffeeScript on Rails 3.1</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-06T10:11:00+08:00" pubdate>Nov 6<span>th</span>, 2011</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><h2>install the gems</h2>
 
-  
-  <h2>2011</h2>
+<hr />
 
-<article>
-  
-<h1><a href="/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/">Testing CoffeeScript on Rails 3.1</a></h1>
-<time datetime="2011-11-06T10:11:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>06</span> <span class='year'>2011</span></time>
+<pre><code>    group :development, :test do
+        gem 'jasminerice'
+        gem 'guard'
+        gem 'guard-rspec'
+        gem 'guard-jasmine'
+        # for mac
+        gem 'rb-fsevent', :require =&gt; false
+        gem 'growl_notify', :require =&gt; false # or gem 'growl'
+        # for linux
+        gem 'rb-inotify', :require =&gt; false
+        gem 'libnotify', :require =&gt; false
+    end
+</code></pre>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/coffeescript/'>coffeescript</a>, <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/rspec/'>rspec</a>, <a class='category' href='/blog/categories/testing/'>testing</a></span>
-</footer>
+<h2>Init</h2>
 
+<hr />
 
-</article>
+<p>Add guard definition to your <code>Guardfile</code> by running this command:</p>
 
+<pre><code>    $ guard init jasmine
+</code></pre>
 
+<p>and add a route for the Jasmine Test Runner to <code>config/routes.rb</code>:</p>
 
-<article>
-  
-<h1><a href="/blog/2011/11/05/backbone-dot-js-and-rails/">Backbone.js and Rails</a></h1>
-<time datetime="2011-11-05T20:33:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>05</span> <span class='year'>2011</span></time>
+<pre><code>    if ["development", "test"].include? Rails.env
+      mount Jasminerice::Engine =&gt; "/jasmine"
+    end
+</code></pre>
 
+<p>Next you create the directory <code>spec/javascripts</code> where your CoffeeScript tests go into. You define the Rails 3.1 asset pipeline manifest in <code>spec/javascripts/spec.js.coffee</code>:</p>
 
-</article>
+<pre><code>    #=require_tree ./
+</code></pre>
 
+<h2>Install <code>phantomjs</code> (headless WebKit with JavaScript API)</h2>
 
+<hr />
 
-<article>
-  
-<h1><a href="/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1/">jQuery Tablesorter Gem for Rails 3.1</a></h1>
-<time datetime="2011-10-25T22:25:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>25</span> <span class='year'>2011</span></time>
+<p>With <code>Homebrew</code> on Mac OS X and install it with:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/gem/'>Gem</a>, <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/jquery/'>jQuery</a></span>
-</footer>
+<pre><code>    $ brew install phantomjs
+</code></pre>
 
+<p>for Ubuntu, you can install it with apt:</p>
 
-</article>
+<pre><code>    $ sudo add-apt-repository ppa:jerome-etienne/neoip
+    $ sudo apt-get update
+    $ sudo apt-get install phantomjs
+</code></pre>
 
+<h2>Run the test</h2>
+
+<hr />
+
+<p>run the following command on your terminal, and you will see the result.</p>
+
+<pre><code>    $ guard
+</code></pre>
+
+<h2>refs</h2>
+
+<hr />
+
+<p><a href="https://github.com/netzpirat/guard-jasmine">https://github.com/netzpirat/guard-jasmine</a></p>
+
+<p><a href="https://github.com/bradphelan/jasminerice">https://github.com/bradphelan/jasminerice</a></p>
+
+<p><a href="http://code.google.com/p/phantomjs/">http://code.google.com/p/phantomjs/</a></p>
+
+<p><a href="https://github.com/guard/guard">https://github.com/guard/guard</a></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Jun</span></span>
+
+      
+
+
+
+
+  
+
+<time datetime="2011-11-06T10:11:00+08:00" pubdate>Nov 6<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/coffeescript/'>coffeescript</a>, <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/rspec/'>rspec</a>, <a class='category' href='/blog/categories/testing/'>testing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iodot.heroku.com/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/" data-via="linjunpop" data-counturl="http://iodot.heroku.com/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/05/backbone-dot-js-and-rails/" title="Previous Post: Backbone.js and Rails">&laquo; Backbone.js and Rails</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -225,7 +322,10 @@ Nov 05 2011 &hellip;">
       var disqus_shortname = 'iodot';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://iodot.heroku.com/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1';
+        var disqus_url = 'http://iodot.heroku.com/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

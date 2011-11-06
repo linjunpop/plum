@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: rails | Jun.Blog]]></title>
-  <link href="http://iodot.heroku.com/blog/categories/rails/atom.xml" rel="self"/>
+  <title><![CDATA[Category: rspec | Jun.Blog]]></title>
+  <link href="http://iodot.heroku.com/blog/categories/rspec/atom.xml" rel="self"/>
   <link href="http://iodot.heroku.com/"/>
   <updated>2011-11-06T10:15:26+08:00</updated>
   <id>http://iodot.heroku.com/</id>
