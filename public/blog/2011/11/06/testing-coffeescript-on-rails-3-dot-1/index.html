@@ -9,7 +9,19 @@
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="install the gems group :development, :test do gem 'jasminerice' gem 'guard' gem 'guard-rspec' gem 'guard-jasmine' # for mac gem 'rb-fsevent', : &hellip;">
+  <meta name="description" content="Gemfile 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+group :development, :test do gem &#39;jasminerice&#39; gem &#39;guard&#39; gem &#39;guard-rspec&#39; gem &#39; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,23 +95,36 @@
   </header>
 
 
-<div class="entry-content"><h2>install the gems</h2>
+<div class="entry-content"><h2><code>Gemfile</code></h2>
 
 <hr />
 
-<pre><code>    group :development, :test do
-        gem 'jasminerice'
-        gem 'guard'
-        gem 'guard-rspec'
-        gem 'guard-jasmine'
-        # for mac
-        gem 'rb-fsevent', :require =&gt; false
-        gem 'growl_notify', :require =&gt; false # or gem 'growl'
-        # for linux
-        gem 'rb-inotify', :require =&gt; false
-        gem 'libnotify', :require =&gt; false
-    end
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">group</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;jasminerice&#39;</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;guard&#39;</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;guard-rspec&#39;</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;guard-jasmine&#39;</span>
+</span><span class='line'>  <span class="c1"># for mac</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;rb-fsevent&#39;</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;growl_notify&#39;</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span> <span class="c1"># or gem &#39;growl&#39;</span>
+</span><span class='line'>  <span class="c1"># for linux</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;rb-inotify&#39;</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;libnotify&#39;</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Init</h2>
 
@@ -107,20 +132,28 @@
 
 <p>Add guard definition to your <code>Guardfile</code> by running this command:</p>
 
-<pre><code>    $ guard init jasmine
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">guard</span> <span class="n">init</span> <span class="n">jasmine</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>and add a route for the Jasmine Test Runner to <code>config/routes.rb</code>:</p>
 
-<pre><code>    if ["development", "test"].include? Rails.env
-      mount Jasminerice::Engine =&gt; "/jasmine"
-    end
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">if</span> <span class="o">[</span><span class="s2">&quot;development&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="o">].</span><span class="n">include?</span> <span class="no">Rails</span><span class="o">.</span><span class="n">env</span>
+</span><span class='line'>  <span class="n">mount</span> <span class="no">Jasminerice</span><span class="o">::</span><span class="no">Engine</span> <span class="o">=&gt;</span> <span class="s2">&quot;/jasmine&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Next you create the directory <code>spec/javascripts</code> where your CoffeeScript tests go into. You define the Rails 3.1 asset pipeline manifest in <code>spec/javascripts/spec.js.coffee</code>:</p>
 
-<pre><code>    #=require_tree ./
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1">#=require_tree ./</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Install <code>phantomjs</code> (headless WebKit with JavaScript API)</h2>
 
@@ -128,15 +161,21 @@
 
 <p>With <code>Homebrew</code> on Mac OS X and install it with:</p>
 
-<pre><code>    $ brew install phantomjs
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>brew install phantomjs
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>for Ubuntu, you can install it with apt:</p>
 
-<pre><code>    $ sudo add-apt-repository ppa:jerome-etienne/neoip
-    $ sudo apt-get update
-    $ sudo apt-get install phantomjs
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:jerome-etienne/neoip
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install phantomjs
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Run the test</h2>
 
@@ -144,8 +183,10 @@
 
 <p>run the following command on your terminal, and you will see the result.</p>
 
-<pre><code>    $ guard
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>guard
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>refs</h2>
 

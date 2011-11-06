@@ -6,58 +6,72 @@ comments: true
 categories: [rails, coffeescript, testing, rspec]
 ---
 
-## install the gems
+## `Gemfile`
 - - -
 
-		group :development, :test do
-			gem 'jasminerice'
-			gem 'guard'
-			gem 'guard-rspec'
-			gem 'guard-jasmine'
-			# for mac
-			gem 'rb-fsevent', :require => false
-			gem 'growl_notify', :require => false # or gem 'growl'
-			# for linux
-			gem 'rb-inotify', :require => false
-			gem 'libnotify', :require => false
-		end
+``` ruby
+group :development, :test do
+	gem 'jasminerice'
+	gem 'guard'
+	gem 'guard-rspec'
+	gem 'guard-jasmine'
+	# for mac
+	gem 'rb-fsevent', :require => false
+	gem 'growl_notify', :require => false # or gem 'growl'
+	# for linux
+	gem 'rb-inotify', :require => false
+	gem 'libnotify', :require => false
+end
+```
 		
 ## Init
 - - -
 
 Add guard definition to your `Guardfile` by running this command:
 
-		$ guard init jasmine
+```
+$ guard init jasmine
+```
 
 and add a route for the Jasmine Test Runner to `config/routes.rb`:
 
-		if ["development", "test"].include? Rails.env
-		  mount Jasminerice::Engine => "/jasmine"
-		end
+``` ruby
+if ["development", "test"].include? Rails.env
+  mount Jasminerice::Engine => "/jasmine"
+end
+```
 
 Next you create the directory `spec/javascripts` where your CoffeeScript tests go into. You define the Rails 3.1 asset pipeline manifest in `spec/javascripts/spec.js.coffee`:
 
-		#=require_tree ./
+``` coffeescript
+#=require_tree ./
+```
 		
 ## Install `phantomjs` (headless WebKit with JavaScript API)
 - - -
 
 With `Homebrew` on Mac OS X and install it with:
 
-		$ brew install phantomjs
+``` bash
+$ brew install phantomjs
+```
 		
 for Ubuntu, you can install it with apt:
 
-		$ sudo add-apt-repository ppa:jerome-etienne/neoip
-		$ sudo apt-get update
-		$ sudo apt-get install phantomjs
+``` bash
+$ sudo add-apt-repository ppa:jerome-etienne/neoip
+$ sudo apt-get update
+$ sudo apt-get install phantomjs
+```
 
 ## Run the test
 - - -
 
 run the following command on your terminal, and you will see the result.
 
-		$ guard
+``` bash
+$ guard
+```
 		
 ## refs
 - - -

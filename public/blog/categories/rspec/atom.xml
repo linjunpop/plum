@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rspec | Jun.Blog]]></title>
   <link href="http://iodot.heroku.com/blog/categories/rspec/atom.xml" rel="self"/>
   <link href="http://iodot.heroku.com/"/>
-  <updated>2011-11-06T10:15:26+08:00</updated>
+  <updated>2011-11-06T23:25:00+08:00</updated>
   <id>http://iodot.heroku.com/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -18,23 +18,27 @@
     <link href="http://iodot.heroku.com/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/"/>
     <updated>2011-11-06T10:11:00+08:00</updated>
     <id>http://iodot.heroku.com/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1</id>
-    <content type="html"><![CDATA[<h2>install the gems</h2>
+    <content type="html"><![CDATA[<h2><code>Gemfile</code></h2>
 
 <hr />
 
-<pre><code>    group :development, :test do
-        gem 'jasminerice'
-        gem 'guard'
-        gem 'guard-rspec'
-        gem 'guard-jasmine'
-        # for mac
-        gem 'rb-fsevent', :require =&gt; false
-        gem 'growl_notify', :require =&gt; false # or gem 'growl'
-        # for linux
-        gem 'rb-inotify', :require =&gt; false
-        gem 'libnotify', :require =&gt; false
-    end
+<p>``` ruby
+group :development, :test do</p>
+
+<pre><code>gem 'jasminerice'
+gem 'guard'
+gem 'guard-rspec'
+gem 'guard-jasmine'
+# for mac
+gem 'rb-fsevent', :require =&gt; false
+gem 'growl_notify', :require =&gt; false # or gem 'growl'
+# for linux
+gem 'rb-inotify', :require =&gt; false
+gem 'libnotify', :require =&gt; false
 </code></pre>
+
+<p>end
+```</p>
 
 <h2>Init</h2>
 
@@ -42,20 +46,25 @@
 
 <p>Add guard definition to your <code>Guardfile</code> by running this command:</p>
 
-<pre><code>    $ guard init jasmine
-</code></pre>
+<p><code>
+$ guard init jasmine
+</code></p>
 
 <p>and add a route for the Jasmine Test Runner to <code>config/routes.rb</code>:</p>
 
-<pre><code>    if ["development", "test"].include? Rails.env
-      mount Jasminerice::Engine =&gt; "/jasmine"
-    end
-</code></pre>
+<p><code>ruby
+if ["development", "test"].include? Rails.env
+  mount Jasminerice::Engine =&gt; "/jasmine"
+end
+</code></p>
 
 <p>Next you create the directory <code>spec/javascripts</code> where your CoffeeScript tests go into. You define the Rails 3.1 asset pipeline manifest in <code>spec/javascripts/spec.js.coffee</code>:</p>
 
-<pre><code>    #=require_tree ./
-</code></pre>
+<p>``` coffeescript</p>
+
+<h1>=require_tree ./</h1>
+
+<p>```</p>
 
 <h2>Install <code>phantomjs</code> (headless WebKit with JavaScript API)</h2>
 
@@ -63,15 +72,17 @@
 
 <p>With <code>Homebrew</code> on Mac OS X and install it with:</p>
 
-<pre><code>    $ brew install phantomjs
-</code></pre>
+<p><code>bash
+$ brew install phantomjs
+</code></p>
 
 <p>for Ubuntu, you can install it with apt:</p>
 
-<pre><code>    $ sudo add-apt-repository ppa:jerome-etienne/neoip
-    $ sudo apt-get update
-    $ sudo apt-get install phantomjs
-</code></pre>
+<p><code>bash
+$ sudo add-apt-repository ppa:jerome-etienne/neoip
+$ sudo apt-get update
+$ sudo apt-get install phantomjs
+</code></p>
 
 <h2>Run the test</h2>
 
@@ -79,8 +90,9 @@
 
 <p>run the following command on your terminal, and you will see the result.</p>
 
-<pre><code>    $ guard
-</code></pre>
+<p><code>bash
+$ guard
+</code></p>
 
 <h2>refs</h2>
 
