@@ -9,19 +9,11 @@
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="Gemfile 1
+  <meta name="description" content="Navigate to Preferences -> Advanced -> Shell Variables, add followed variables: 1
 2
 3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-group :development, :test do gem &#39;jasminerice&#39; gem &#39;guard&#39; gem &#39;guard-rspec&#39; gem &#39; &hellip;">
+TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+GEM_HOME: env | grep &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +66,45 @@ group :development, :test do gem &#39;jasminerice&#39; gem &#39;guard&#39; gem &
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/10/textmate-and-rvm-gemset/">TextMate and RVM Gemset</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-10T10:41:00+08:00" pubdate>Nov 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+</span><span class='line'>GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, ""); print }'
+</span><span class='line'>GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, ""); print }'</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -294,6 +325,10 @@ group :development, :test do gem &#39;jasminerice&#39; gem &#39;guard&#39; gem &
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/10/textmate-and-rvm-gemset/">TextMate and RVM Gemset</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/">Testing CoffeeScript on Rails 3.1</a>

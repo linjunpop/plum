@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: textmate | Jun.Blog]]></title>
+  <link href="http://iodot.heroku.com/blog/categories/textmate/atom.xml" rel="self"/>
+  <link href="http://iodot.heroku.com/"/>
+  <updated>2011-11-15T09:17:36+08:00</updated>
+  <id>http://iodot.heroku.com/</id>
+  <author>
+    <name><![CDATA[Jun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TextMate and RVM Gemset]]></title>
+    <link href="http://iodot.heroku.com/blog/2011/11/10/textmate-and-rvm-gemset/"/>
+    <updated>2011-11-10T10:41:00+08:00</updated>
+    <id>http://iodot.heroku.com/blog/2011/11/10/textmate-and-rvm-gemset</id>
+    <content type="html"><![CDATA[<p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
+
+<p><code>
+TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, ""); print }'
+GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, ""); print }'
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

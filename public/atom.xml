@@ -4,7 +4,7 @@
   <title><![CDATA[Jun.Blog]]></title>
   <link href="http://iodot.heroku.com/atom.xml" rel="self"/>
   <link href="http://iodot.heroku.com/"/>
-  <updated>2011-11-06T23:25:00+08:00</updated>
+  <updated>2011-11-15T09:17:36+08:00</updated>
   <id>http://iodot.heroku.com/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[TextMate and RVM Gemset]]></title>
+    <link href="http://iodot.heroku.com/blog/2011/11/10/textmate-and-rvm-gemset/"/>
+    <updated>2011-11-10T10:41:00+08:00</updated>
+    <id>http://iodot.heroku.com/blog/2011/11/10/textmate-and-rvm-gemset</id>
+    <content type="html"><![CDATA[<p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+</span><span class='line'>GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, ""); print }'
+</span><span class='line'>GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, ""); print }'</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Testing CoffeeScript on Rails 3.1]]></title>
