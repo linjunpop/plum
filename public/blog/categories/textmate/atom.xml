@@ -4,7 +4,7 @@
   <title><![CDATA[Category: textmate | Jun.Blog]]></title>
   <link href="http://iodot.heroku.com/blog/categories/textmate/atom.xml" rel="self"/>
   <link href="http://iodot.heroku.com/"/>
-  <updated>2011-11-15T09:17:36+08:00</updated>
+  <updated>2011-11-15T09:25:51+08:00</updated>
   <id>http://iodot.heroku.com/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -20,11 +20,11 @@
     <id>http://iodot.heroku.com/blog/2011/11/10/textmate-and-rvm-gemset</id>
     <content type="html"><![CDATA[<p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
 
-<p><code>
-TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
-GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, ""); print }'
-GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, ""); print }'
-</code></p>
+<p><div><script src='https://gist.github.com/1365809.js?file='></script>
+<noscript><pre><code>TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, &quot;&quot;); print }'
+GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'</code></pre></noscript></div>
+</p>
 ]]></content>
   </entry>
   

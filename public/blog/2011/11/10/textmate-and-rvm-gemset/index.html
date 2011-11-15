@@ -9,10 +9,7 @@
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="Navigate to Preferences -> Advanced -> Shell Variables, add followed variables: 1
-2
-3
-TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+  <meta name="description" content="Navigate to Preferences -> Advanced -> Shell Variables, add followed variables: TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
 GEM_HOME: env | grep &hellip;">
   
 
@@ -89,12 +86,10 @@ GEM_HOME: env | grep &hellip;">
 
 <div class="entry-content"><p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
-</span><span class='line'>GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, ""); print }'
-</span><span class='line'>GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, ""); print }'</span></code></pre></td></tr></table></div></figure>
+<div><script src='https://gist.github.com/1365809.js?file='></script>
+<noscript><pre><code>TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, &quot;&quot;); print }'
+GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'</code></pre></noscript></div>
 
 </div>
 
@@ -130,10 +125,6 @@ GEM_HOME: env | grep &hellip;">
   <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iodot.heroku.com/blog/2011/11/10/textmate-and-rvm-gemset/" data-via="linjunpop" data-counturl="http://iodot.heroku.com/blog/2011/11/10/textmate-and-rvm-gemset/" >Tweet</a>
   
   
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
   
 </div>
 
@@ -278,24 +269,7 @@ GEM_HOME: env | grep &hellip;">
 
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 
 
 
