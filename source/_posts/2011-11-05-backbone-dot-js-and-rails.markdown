@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-a Backbone.js and Rails talk, by [Jason Morrison](http://jayunit.net), the resources: [http://jayunit.net/2011/09/25/backbone-js-on-rails-talk/]()
+a Backbone.js and Rails talk, by [Jason Morrison](http://jayunit.net), the resources: [http://jayunit.net/2011/09/25/backbone-js-on-rails-talk/](http://jayunit.net/2011/09/25/backbone-js-on-rails-talk/)
 
 And there is [an ebook](http://workshops.thoughtbot.com/backbone-js-on-rails) about Backbone.js on Rails
 
