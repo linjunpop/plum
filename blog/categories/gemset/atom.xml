@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: gemset | Jun.Blog]]></title>
+  <link href="http://linjunpop.github.com/plum/blog/categories/gemset/atom.xml" rel="self"/>
+  <link href="http://linjunpop.github.com/plum/"/>
+  <updated>2012-01-06T21:16:24+08:00</updated>
+  <id>http://linjunpop.github.com/plum/</id>
+  <author>
+    <name><![CDATA[Jun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TextMate and RVM Gemset]]></title>
+    <link href="http://linjunpop.github.com/plum/blog/2011/11/10/textmate-and-rvm-gemset/"/>
+    <updated>2011-11-10T10:41:00+08:00</updated>
+    <id>http://linjunpop.github.com/plum/blog/2011/11/10/textmate-and-rvm-gemset</id>
+    <content type="html"><![CDATA[<p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
+
+<p><div><script src='https://gist.github.com/1365809.js?file='></script>
+<noscript><pre><code>TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, &quot;&quot;); print }'
+GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>
