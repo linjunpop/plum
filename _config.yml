@@ -65,7 +65,7 @@ github_skip_forks: true
 
 # Twitter
 twitter_user: linjunpop
-twitter_tweet_count: 5
+twitter_tweet_count: 7
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
@@ -78,14 +78,14 @@ google_plus_one_size: medium
 # Google Plus Profile
 # Hidden: No visible button, just add author information to search results
 googleplus_user: 104676411547093307646
-googleplus_hidden: false
+googleplus_hidden: true
 
 # Pinboard
 pinboard_user:
 pinboard_count: 3
 
 # Delicious
-delicious_user: linjunpop
+delicious_user:
 delicious_count: 3
 
 # Disqus Comments
