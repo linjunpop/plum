@@ -26,10 +26,10 @@ email:
 # ----------------------- #
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
-root: /plum
+root: /
 permalink: /blog/:year/:month/:day/:title/
 source: source
-destination: public/plum
+destination: public/
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
