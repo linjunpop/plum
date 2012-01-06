@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Jun.Blog]]></title>
-  <link href="http://linjunpop.github.com/plum/atom.xml" rel="self"/>
-  <link href="http://linjunpop.github.com/plum/"/>
-  <updated>2012-01-06T21:16:24+08:00</updated>
-  <id>http://linjunpop.github.com/plum/</id>
+  <link href="http://plum.iodot.org/atom.xml" rel="self"/>
+  <link href="http://plum.iodot.org/"/>
+  <updated>2012-01-06T21:36:37+08:00</updated>
+  <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[TextMate and RVM Gemset]]></title>
-    <link href="http://linjunpop.github.com/plum/blog/2011/11/10/textmate-and-rvm-gemset/"/>
+    <link href="http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset/"/>
     <updated>2011-11-10T10:41:00+08:00</updated>
-    <id>http://linjunpop.github.com/plum/blog/2011/11/10/textmate-and-rvm-gemset</id>
+    <id>http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset</id>
     <content type="html"><![CDATA[<p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
 
 <div><script src='https://gist.github.com/1365809.js?file='></script>
@@ -30,9 +30,9 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
   
   <entry>
     <title type="html"><![CDATA[Testing CoffeeScript on Rails 3.1]]></title>
-    <link href="http://linjunpop.github.com/plum/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/"/>
+    <link href="http://plum.iodot.org/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/"/>
     <updated>2011-11-06T10:11:00+08:00</updated>
-    <id>http://linjunpop.github.com/plum/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1</id>
+    <id>http://plum.iodot.org/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1</id>
     <content type="html"><![CDATA[<h2><code>Gemfile</code></h2>
 
 <hr />
@@ -142,9 +142,9 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
   
   <entry>
     <title type="html"><![CDATA[Backbone.js and Rails]]></title>
-    <link href="http://linjunpop.github.com/plum/blog/2011/11/05/backbone-dot-js-and-rails/"/>
+    <link href="http://plum.iodot.org/blog/2011/11/05/backbone-dot-js-and-rails/"/>
     <updated>2011-11-05T20:33:00+08:00</updated>
-    <id>http://linjunpop.github.com/plum/blog/2011/11/05/backbone-dot-js-and-rails</id>
+    <id>http://plum.iodot.org/blog/2011/11/05/backbone-dot-js-and-rails</id>
     <content type="html"><![CDATA[<p>a Backbone.js and Rails talk, by <a href="http://jayunit.net">Jason Morrison</a>, the resources: <a href="http://jayunit.net/2011/09/25/backbone-js-on-rails-talk/">http://jayunit.net/2011/09/25/backbone-js-on-rails-talk/</a></p>
 
 <p>And there is <a href="http://workshops.thoughtbot.com/backbone-js-on-rails">an ebook</a> about Backbone.js on Rails</p>
@@ -159,9 +159,9 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
   
   <entry>
     <title type="html"><![CDATA[jQuery Tablesorter Gem for Rails 3.1]]></title>
-    <link href="http://linjunpop.github.com/plum/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1/"/>
+    <link href="http://plum.iodot.org/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1/"/>
     <updated>2011-10-25T22:25:00+08:00</updated>
-    <id>http://linjunpop.github.com/plum/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1</id>
+    <id>http://plum.iodot.org/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1</id>
     <content type="html"><![CDATA[<p>I create my first gem, <a href="https://rubygems.org/gems/jquery-tablesorter">jquery-tablesorter</a>.</p>
 
 <p>It&#8217;s based on <a href="http://lovepeacenukes.com/">Christian Bach</a>&#8217;s jQuery plugin <a href="http://tablesorter.com">Tablesorter</a>.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: textmate | Jun.Blog]]></title>
-  <link href="http://linjunpop.github.com/plum/blog/categories/textmate/atom.xml" rel="self"/>
-  <link href="http://linjunpop.github.com/plum/"/>
-  <updated>2012-01-06T21:16:24+08:00</updated>
-  <id>http://linjunpop.github.com/plum/</id>
+  <link href="http://plum.iodot.org/blog/categories/textmate/atom.xml" rel="self"/>
+  <link href="http://plum.iodot.org/"/>
+  <updated>2012-01-06T21:36:37+08:00</updated>
+  <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[TextMate and RVM Gemset]]></title>
-    <link href="http://linjunpop.github.com/plum/blog/2011/11/10/textmate-and-rvm-gemset/"/>
+    <link href="http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset/"/>
     <updated>2011-11-10T10:41:00+08:00</updated>
-    <id>http://linjunpop.github.com/plum/blog/2011/11/10/textmate-and-rvm-gemset</id>
+    <id>http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset</id>
     <content type="html"><![CDATA[<p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
 
 <p><div><script src='https://gist.github.com/1365809.js?file='></script>

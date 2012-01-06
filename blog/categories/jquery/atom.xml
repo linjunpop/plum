@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: jQuery | Jun.Blog]]></title>
-  <link href="http://linjunpop.github.com/plum/blog/categories/jquery/atom.xml" rel="self"/>
-  <link href="http://linjunpop.github.com/plum/"/>
-  <updated>2012-01-06T21:16:24+08:00</updated>
-  <id>http://linjunpop.github.com/plum/</id>
+  <link href="http://plum.iodot.org/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://plum.iodot.org/"/>
+  <updated>2012-01-06T21:36:37+08:00</updated>
+  <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[jQuery Tablesorter Gem for Rails 3.1]]></title>
-    <link href="http://linjunpop.github.com/plum/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1/"/>
+    <link href="http://plum.iodot.org/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1/"/>
     <updated>2011-10-25T22:25:00+08:00</updated>
-    <id>http://linjunpop.github.com/plum/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1</id>
+    <id>http://plum.iodot.org/blog/2011/10/25/jquery-tablesorter-gem-for-rails-3-dot-1</id>
     <content type="html"><![CDATA[<p>I create my first gem, <a href="https://rubygems.org/gems/jquery-tablesorter">jquery-tablesorter</a>.</p>
 
 <p>It's based on <a href="http://lovepeacenukes.com/">Christian Bach</a>'s jQuery plugin <a href="http://tablesorter.com">Tablesorter</a>.</p>
