@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mac | Jun.Blog]]></title>
+  <link href="http://plum.iodot.org/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://plum.iodot.org/"/>
+  <updated>2012-01-07T19:25:56+08:00</updated>
+  <id>http://plum.iodot.org/</id>
+  <author>
+    <name><![CDATA[Jun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Great Mac and iOS Apps]]></title>
+    <link href="http://plum.iodot.org/blog/2012/01/07/great-mac-and-ios-apps/"/>
+    <updated>2012-01-07T19:11:00+08:00</updated>
+    <id>http://plum.iodot.org/blog/2012/01/07/great-mac-and-ios-apps</id>
+    <content type="html"><![CDATA[<p>Thanks for these great apps, year 2011.</p>
+
+<h2>Mac</h2>
+
+<ul>
+<li>Alfred</li>
+<li>Dropbox</li>
+<li>MPlayerX</li>
+<li>The Unarchiver</li>
+<li>Evernote</li>
+<li>Day One</li>
+<li>Sparrow</li>
+<li>SourceTree</li>
+<li>Twitter</li>
+<li>Reeder</li>
+<li>Growl</li>
+<li>iPhoto</li>
+<li>VirtualBox</li>
+<li>iTerm</li>
+<li>Textmate</li>
+<li>MacVim</li>
+</ul>
+
+
+<h2>iOS</h2>
+
+<ul>
+<li>Photosync</li>
+<li>Day One</li>
+<li>Evernote</li>
+<li>Orchestra</li>
+<li>iBooks</li>
+<li>Reeder</li>
+<li>Flipboard</li>
+<li>Sleep Cycle</li>
+<li>Google Translate</li>
+<li>Google</li>
+<li>SportsTracker</li>
+<li>Twitter</li>
+<li>WhatsApp</li>
+<li>Google Latitude</li>
+<li>Path</li>
+<li>Star Walk</li>
+<li>GarageBand</li>
+<li>TuneIn Radio</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
