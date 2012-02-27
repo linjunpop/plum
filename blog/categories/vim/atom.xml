@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vim | Jun.Blog]]></title>
+  <link href="http://plum.iodot.org/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://plum.iodot.org/"/>
+  <updated>2012-02-27T20:53:41+08:00</updated>
+  <id>http://plum.iodot.org/</id>
+  <author>
+    <name><![CDATA[Jun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Switch to Vim]]></title>
+    <link href="http://plum.iodot.org/blog/2012/02/27/switch-to-vim/"/>
+    <updated>2012-02-27T20:44:00+08:00</updated>
+    <id>http://plum.iodot.org/blog/2012/02/27/switch-to-vim</id>
+    <content type="html"><![CDATA[<p>After I became a textmate user for about six months. It's great, but not for me. So I switch back to my favorite Vim.</p>
+
+<p>This time, I use <a href="https://github.com/carlhuda/janus">Janus</a> to get rid
+of configuration mess.</p>
+]]></content>
+  </entry>
+  
+</feed>
