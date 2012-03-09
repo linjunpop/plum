@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | Jun.Blog]]></title>
   <link href="http://plum.iodot.org/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://plum.iodot.org/"/>
-  <updated>2012-02-27T20:53:41+08:00</updated>
+  <updated>2012-03-09T23:17:37+08:00</updated>
   <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -12,6 +12,133 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use Factory.stub to speedup Rspec test]]></title>
+    <link href="http://plum.iodot.org/blog/2012/03/09/use-factory-dot-stub-to-speedup-rspec-test/"/>
+    <updated>2012-03-09T23:05:00+08:00</updated>
+    <id>http://plum.iodot.org/blog/2012/03/09/use-factory-dot-stub-to-speedup-rspec-test</id>
+    <content type="html"><![CDATA[<p>In one of my company's recent project, the spec test become very slow.
+After a research on that problem, I find a solution is to stub the
+associated model in the model test.</p>
+
+<p>Here is an example:</p>
+
+<p>The <code>app/models/call_sheet.rb</code>:</p>
+
+<p>```
+require 'spec_helper'</p>
+
+<p>describe CallSheet do</p>
+
+<p>  let(:call_sheet) { Factory(:call_sheet) }
+  subject { call_sheet }</p>
+
+<p>  describe 'associations' do</p>
+
+<pre><code>it { should belong_to(:draft) }
+it { should belong_to(:category) }
+it { should belong_to(:stage) }
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>Here is the <code>spec/support/factories/call_sheet.rb</code> factory:</p>
+
+<p>```
+FactoryGirl.define do
+  factory :call_sheet do</p>
+
+<pre><code>company_name "the company"
+address "the address"
+association :draft
+association :stage
+association :category
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>It's associate with <code>draft</code>, <code>stage</code> and <code>category</code>.</p>
+
+<p>Now, run the spec test in my machine. Here's the result:</p>
+
+<p>```
+Top 3 slowest examples:
+  CallSheet associations</p>
+
+<pre><code>8.33 seconds ./spec/models/call_sheet_spec.rb:14
+</code></pre>
+
+<p>  CallSheet associations</p>
+
+<pre><code>7.42 seconds ./spec/models/call_sheet_spec.rb:16
+</code></pre>
+
+<p>  CallSheet associations</p>
+
+<pre><code>6.76 seconds ./spec/models/call_sheet_spec.rb:15
+</code></pre>
+
+<p>Finished in 22.51 seconds
+```</p>
+
+<p>It's very slow, because the <code>Draft</code>, <code>Stage</code>, <code>Category</code> is associate with other models too.
+We should not care about that in the <code>CallSheet</code> model's rspec test.</p>
+
+<p>So, I Changed <code>spec/models/call_sheet_spec.rb</code> to</p>
+
+<p>```
+require 'spec_helper'</p>
+
+<p>describe CallSheet do</p>
+
+<p>  let(:project) { Factory.stub(:project) }
+  let(:draft) { Factory.stub(:draft) }
+  let(:stage) { Factory.stub(:stage) }
+  let(:category) { Factory.stub(:category) }
+  let(:call_sheet) { Factory(:call_sheet, draft: draft, stage: stage, category: category) }
+  subject { call_sheet }</p>
+
+<p>  describe 'associations' do</p>
+
+<pre><code>it { should belong_to(:draft) }
+it { should belong_to(:category) }
+it { should belong_to(:stage) }
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>The result:</p>
+
+<p>```
+Top 3 slowest examples:
+  CallSheet associations</p>
+
+<pre><code>0.30077 seconds ./spec/models/call_sheet_spec.rb:13
+</code></pre>
+
+<p>  CallSheet associations</p>
+
+<pre><code>0.0172 seconds ./spec/models/call_sheet_spec.rb:15
+</code></pre>
+
+<p>  CallSheet associations</p>
+
+<pre><code>0.01644 seconds ./spec/models/call_sheet_spec.rb:14
+</code></pre>
+
+<p>Finished in 0.33607 seconds
+```</p>
+
+<p>Super fast now.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Switch to Vim]]></title>

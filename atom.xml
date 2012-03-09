@@ -4,7 +4,7 @@
   <title><![CDATA[Jun.Blog]]></title>
   <link href="http://plum.iodot.org/atom.xml" rel="self"/>
   <link href="http://plum.iodot.org/"/>
-  <updated>2012-02-27T20:53:41+08:00</updated>
+  <updated>2012-03-09T23:17:37+08:00</updated>
   <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -12,6 +12,160 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use Factory.stub to speedup Rspec test]]></title>
+    <link href="http://plum.iodot.org/blog/2012/03/09/use-factory-dot-stub-to-speedup-rspec-test/"/>
+    <updated>2012-03-09T23:05:00+08:00</updated>
+    <id>http://plum.iodot.org/blog/2012/03/09/use-factory-dot-stub-to-speedup-rspec-test</id>
+    <content type="html"><![CDATA[<p>In one of my company&#8217;s recent project, the spec test become very slow.
+After a research on that problem, I find a solution is to stub the
+associated model in the model test.</p>
+
+<p>Here is an example:</p>
+
+<p>The <code>app/models/call_sheet.rb</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require 'spec_helper'
+</span><span class='line'>
+</span><span class='line'>describe CallSheet do
+</span><span class='line'>
+</span><span class='line'>  let(:call_sheet) { Factory(:call_sheet) }
+</span><span class='line'>  subject { call_sheet }
+</span><span class='line'>
+</span><span class='line'>  describe 'associations' do
+</span><span class='line'>    it { should belong_to(:draft) }
+</span><span class='line'>    it { should belong_to(:category) }
+</span><span class='line'>    it { should belong_to(:stage) }
+</span><span class='line'>  end
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here is the <code>spec/support/factories/call_sheet.rb</code> factory:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FactoryGirl.define do
+</span><span class='line'>  factory :call_sheet do
+</span><span class='line'>    company_name "the company"
+</span><span class='line'>    address "the address"
+</span><span class='line'>    association :draft
+</span><span class='line'>    association :stage
+</span><span class='line'>    association :category
+</span><span class='line'>  end
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It&#8217;s associate with <code>draft</code>, <code>stage</code> and <code>category</code>.</p>
+
+<p>Now, run the spec test in my machine. Here&#8217;s the result:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Top 3 slowest examples:
+</span><span class='line'>  CallSheet associations 
+</span><span class='line'>    8.33 seconds ./spec/models/call_sheet_spec.rb:14
+</span><span class='line'>  CallSheet associations 
+</span><span class='line'>    7.42 seconds ./spec/models/call_sheet_spec.rb:16
+</span><span class='line'>  CallSheet associations 
+</span><span class='line'>    6.76 seconds ./spec/models/call_sheet_spec.rb:15
+</span><span class='line'>
+</span><span class='line'>Finished in 22.51 seconds</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It&#8217;s very slow, because the <code>Draft</code>, <code>Stage</code>, <code>Category</code> is associate with other models too.
+We should not care about that in the <code>CallSheet</code> model&#8217;s rspec test.</p>
+
+<p>So, I Changed <code>spec/models/call_sheet_spec.rb</code> to</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require 'spec_helper'
+</span><span class='line'>
+</span><span class='line'>describe CallSheet do
+</span><span class='line'>
+</span><span class='line'>  let(:project) { Factory.stub(:project) }
+</span><span class='line'>  let(:draft) { Factory.stub(:draft) }
+</span><span class='line'>  let(:stage) { Factory.stub(:stage) }
+</span><span class='line'>  let(:category) { Factory.stub(:category) }
+</span><span class='line'>  let(:call_sheet) { Factory(:call_sheet, draft: draft, stage: stage, category: category) }
+</span><span class='line'>  subject { call_sheet }
+</span><span class='line'>
+</span><span class='line'>  describe 'associations' do
+</span><span class='line'>    it { should belong_to(:draft) }
+</span><span class='line'>    it { should belong_to(:category) }
+</span><span class='line'>    it { should belong_to(:stage) }
+</span><span class='line'>  end
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The result:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Top 3 slowest examples:
+</span><span class='line'>  CallSheet associations 
+</span><span class='line'>    0.30077 seconds ./spec/models/call_sheet_spec.rb:13
+</span><span class='line'>  CallSheet associations 
+</span><span class='line'>    0.0172 seconds ./spec/models/call_sheet_spec.rb:15
+</span><span class='line'>  CallSheet associations 
+</span><span class='line'>    0.01644 seconds ./spec/models/call_sheet_spec.rb:14
+</span><span class='line'>
+</span><span class='line'>Finished in 0.33607 seconds</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Super fast now.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Switch to Vim]]></title>
