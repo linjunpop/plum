@@ -4,7 +4,7 @@
   <title><![CDATA[Jun.Blog]]></title>
   <link href="http://plum.iodot.org/atom.xml" rel="self"/>
   <link href="http://plum.iodot.org/"/>
-  <updated>2012-03-19T10:32:50+08:00</updated>
+  <updated>2012-04-12T14:32:25+08:00</updated>
   <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Create a new FormBuilder instanece on Rails 3]]></title>
+    <link href="http://plum.iodot.org/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/"/>
+    <updated>2012-04-12T14:28:00+08:00</updated>
+    <id>http://plum.iodot.org/blog/2012/04/12/new-formbuilder-instanece-on-rails-3</id>
+    <content type="html"><![CDATA[<p>As on rails 2 we can create a new <code>ActionView::Helpers::FormBuilder</code>
+instance with
+<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template, {}, proc{})</code></p>
+
+<p>But on rails 3 this becomes
+<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, this, {}, proc{})</code></p>
+
+<p>Just take a note.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Use Factory.stub to speedup Rspec test]]></title>

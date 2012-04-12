@@ -9,8 +9,9 @@
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="In one of my company&#8217;s recent project, the spec test become very slow.
-After a research on that problem, I find a solution is to stub the &hellip;">
+  <meta name="description" content="As on rails 2 we can create a new ActionView::Helpers::FormBuilder
+instance with
+ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -63,6 +64,44 @@ After a research on that problem, I find a solution is to stub the &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/">Create a New FormBuilder Instanece on Rails 3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2012-04-12T14:28:00+08:00" pubdate>Apr 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As on rails 2 we can create a new <code>ActionView::Helpers::FormBuilder</code>
+instance with
+<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template, {}, proc{})</code></p>
+
+<p>But on rails 3 this becomes
+<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, this, {}, proc{})</code></p>
+
+<p>Just take a note.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -609,6 +648,10 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/">Create a new FormBuilder instanece on Rails 3</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/03/09/use-factory-dot-stub-to-speedup-rspec-test/">Use Factory.stub to speedup Rspec test</a>
       </li>
     
@@ -622,10 +665,6 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
     
       <li class="post">
         <a href="/blog/2011/11/10/textmate-and-rvm-gemset/">TextMate and RVM Gemset</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/">Testing CoffeeScript on Rails 3.1</a>
       </li>
     
   </ul>

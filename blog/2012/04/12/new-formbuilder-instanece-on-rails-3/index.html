@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>TextMate and RVM Gemset - Jun.Blog</title>
+  <title>Create a new FormBuilder instanece on Rails 3 - Jun.Blog</title>
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="Navigate to Preferences -> Advanced -> Shell Variables, add followed variables: TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
-GEM_HOME: env | grep &hellip;">
+  <meta name="description" content="As on rails 2 we can create a new ActionView::Helpers::FormBuilder
+instance with
+ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ GEM_HOME: env | grep &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset">
+  <link rel="canonical" href="http://plum.iodot.org/blog/2012/04/12/new-formbuilder-instanece-on-rails-3">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,7 +67,7 @@ GEM_HOME: env | grep &hellip;">
   
   <header>
     
-      <h1 class="entry-title">TextMate and RVM Gemset</h1>
+      <h1 class="entry-title">Create a New FormBuilder Instanece on Rails 3</h1>
     
     
       <p class="meta">
@@ -77,20 +78,21 @@ GEM_HOME: env | grep &hellip;">
 
   
 
-<time datetime="2011-11-10T10:41:00+08:00" pubdate>Nov 10<span>th</span>, 2011</time>
+<time datetime="2012-04-12T14:28:00+08:00" pubdate>Apr 12<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
+<div class="entry-content"><p>As on rails 2 we can create a new <code>ActionView::Helpers::FormBuilder</code>
+instance with
+<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template, {}, proc{})</code></p>
 
-<div><script src='https://gist.github.com/1365809.js?file='></script>
-<noscript><pre><code>TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
-GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, &quot;&quot;); print }'
-GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'</code></pre></noscript></div>
+<p>But on rails 3 this becomes
+<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, this, {}, proc{})</code></p>
 
+<p>Just take a note.</p>
 </div>
 
 
@@ -108,12 +110,12 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
 
   
 
-<time datetime="2011-11-10T10:41:00+08:00" pubdate>Nov 10<span>th</span>, 2011</time>
+<time datetime="2012-04-12T14:28:00+08:00" pubdate>Apr 12<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/gemset/'>gemset</a>, <a class='category' href='/blog/categories/rvm/'>rvm</a>, <a class='category' href='/blog/categories/textmate/'>textmate</a>
+    <a class='category' href='/blog/categories/rails/'>rails</a>
   
 </span>
 
@@ -122,7 +124,7 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset/" data-via="linjunpop" data-counturl="http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://plum.iodot.org/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/" data-via="linjunpop" data-counturl="http://plum.iodot.org/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/" >Tweet</a>
   
   
   
@@ -131,10 +133,8 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/11/06/testing-coffeescript-on-rails-3-dot-1/" title="Previous Post: Testing CoffeeScript on Rails 3.1">&laquo; Testing CoffeeScript on Rails 3.1</a>
+        <a class="basic-alignment left" href="/blog/2012/03/09/use-factory-dot-stub-to-speedup-rspec-test/" title="Previous Post: Use Factory.stub to speedup Rspec test">&laquo; Use Factory.stub to speedup Rspec test</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/01/07/great-mac-and-ios-apps/" title="next Post: Great Mac and iOS Apps">Great Mac and iOS Apps &raquo;</a>
       
     </p>
   </footer>
@@ -255,8 +255,8 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset';
-        var disqus_url = 'http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset';
+        var disqus_identifier = 'http://plum.iodot.org/blog/2012/04/12/new-formbuilder-instanece-on-rails-3';
+        var disqus_url = 'http://plum.iodot.org/blog/2012/04/12/new-formbuilder-instanece-on-rails-3';
         var disqus_script = 'embed.js';
       
     (function () {
