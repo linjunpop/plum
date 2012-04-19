@@ -14,7 +14,7 @@ Here is an example:
 
 The `app/models/call_sheet.rb`:
 
-```
+```ruby
 require 'spec_helper'
 
 describe CallSheet do
@@ -32,7 +32,7 @@ end
 
 Here is the `spec/support/factories/call_sheet.rb` factory:
 
-```
+```ruby
 FactoryGirl.define do
   factory :call_sheet do
     company_name "the company"
@@ -48,7 +48,7 @@ It's associate with `draft`, `stage` and `category`.
 
 Now, run the spec test in my machine. Here's the result:
 
-```
+```ruby
 Top 3 slowest examples:
   CallSheet associations 
     8.33 seconds ./spec/models/call_sheet_spec.rb:14
@@ -65,7 +65,7 @@ We should not care about that in the `CallSheet` model's rspec test.
 
 So, I Changed `spec/models/call_sheet_spec.rb` to
 
-```
+```ruby
 require 'spec_helper'
 
 describe CallSheet do
@@ -87,7 +87,7 @@ end
 
 The result:
 
-```
+```bash
 Top 3 slowest examples:
   CallSheet associations 
     0.30077 seconds ./spec/models/call_sheet_spec.rb:13

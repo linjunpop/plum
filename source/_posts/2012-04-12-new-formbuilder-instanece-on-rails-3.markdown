@@ -9,13 +9,13 @@ categories: [rails]
 As on rails 2 we can create a new `ActionView::Helpers::FormBuilder`
 instance with
 
-```Ruby
+```ruby
 ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template, {}, proc{})
 ```
 
 But on rails 3 this becomes
 
-```Ruby
+```ruby
 ActionView::Helpers::FormBuilder.new(:foobar, @foobar, this, {}, proc{})
 ```
 
