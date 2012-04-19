@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rvm | Jun.Blog]]></title>
   <link href="http://plum.iodot.org/blog/categories/rvm/atom.xml" rel="self"/>
   <link href="http://plum.iodot.org/"/>
-  <updated>2012-04-12T14:42:10+08:00</updated>
+  <updated>2012-04-19T08:39:30+08:00</updated>
   <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -20,7 +20,11 @@
     <id>http://plum.iodot.org/blog/2011/11/10/textmate-and-rvm-gemset</id>
     <content type="html"><![CDATA[<p>Navigate to <code>Preferences</code> -> <code>Advanced</code> -> <code>Shell Variables</code>, add followed variables:</p>
 
-<p>{% gist 1365809 %}</p>
+<p><div><script src='https://gist.github.com/1365809.js?file='></script>
+<noscript><pre><code>TM_RUBY: /Users/Jun/.rvm/bin/rvm-auto-ruby
+GEM_HOME: env | grep GEM_HOME | awk '{ sub(/GEM_HOME=/, &quot;&quot;); print }'
+GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'</code></pre></noscript></div>
+</p>
 ]]></content>
   </entry>
   

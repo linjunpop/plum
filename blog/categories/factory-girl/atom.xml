@@ -4,7 +4,7 @@
   <title><![CDATA[Category: factory_girl | Jun.Blog]]></title>
   <link href="http://plum.iodot.org/blog/categories/factory-girl/atom.xml" rel="self"/>
   <link href="http://plum.iodot.org/"/>
-  <updated>2012-04-12T14:42:10+08:00</updated>
+  <updated>2012-04-19T08:39:30+08:00</updated>
   <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -26,7 +26,7 @@ associated model in the model test.</p>
 
 <p>The <code>app/models/call_sheet.rb</code>:</p>
 
-<p>```
+<p>```ruby
 require 'spec_helper'</p>
 
 <p>describe CallSheet do</p>
@@ -47,7 +47,7 @@ end
 
 <p>Here is the <code>spec/support/factories/call_sheet.rb</code> factory:</p>
 
-<p>```
+<p>```ruby
 FactoryGirl.define do
   factory :call_sheet do</p>
 
@@ -66,7 +66,7 @@ end
 
 <p>Now, run the spec test in my machine. Here's the result:</p>
 
-<p>```
+<p>```ruby
 Top 3 slowest examples:
   CallSheet associations</p>
 
@@ -91,7 +91,7 @@ We should not care about that in the <code>CallSheet</code> model's rspec test.<
 
 <p>So, I Changed <code>spec/models/call_sheet_spec.rb</code> to</p>
 
-<p>```
+<p>```ruby
 require 'spec_helper'</p>
 
 <p>describe CallSheet do</p>
@@ -116,7 +116,7 @@ end
 
 <p>The result:</p>
 
-<p>```
+<p>```bash
 Top 3 slowest examples:
   CallSheet associations</p>
 

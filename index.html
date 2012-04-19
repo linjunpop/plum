@@ -9,9 +9,8 @@
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="As on rails 2 we can create a new ActionView::Helpers::FormBuilder
-instance with
-ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template &hellip;">
+  <meta name="description" content="Just a simple command to filter rails log with ack! 1
+$ tail -F log/development.log | ack FOOBAR ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +69,44 @@ ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/04/19/filter-rails-log-with-ack/">Filter Rails Log With Ack</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2012-04-19T08:31:00+08:00" pubdate>Apr 19<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Just a simple command to filter rails log with ack!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>tail -F log/development.log | ack FOOBAR
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/">Create a New FormBuilder Instanece on Rails 3</a></h1>
     
     
@@ -89,11 +126,19 @@ ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template &hellip;">
 
 
   <div class="entry-content"><p>As on rails 2 we can create a new <code>ActionView::Helpers::FormBuilder</code>
-instance with
-<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template, {}, proc{})</code></p>
+instance with</p>
 
-<p>But on rails 3 this becomes
-<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, this, {}, proc{})</code></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">ActionView</span><span class="o">::</span><span class="no">Helpers</span><span class="o">::</span><span class="no">FormBuilder</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:foobar</span><span class="p">,</span> <span class="vi">@foobar</span><span class="p">,</span> <span class="vi">@template</span><span class="p">,</span> <span class="p">{},</span> <span class="nb">proc</span><span class="p">{})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But on rails 3 this becomes</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">ActionView</span><span class="o">::</span><span class="no">Helpers</span><span class="o">::</span><span class="no">FormBuilder</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:foobar</span><span class="p">,</span> <span class="vi">@foobar</span><span class="p">,</span> <span class="n">this</span><span class="p">,</span> <span class="p">{},</span> <span class="nb">proc</span><span class="p">{})</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Just take a note.</p>
 </div>
@@ -134,7 +179,7 @@ associated model in the model test.</p>
 
 <p>The <code>app/models/call_sheet.rb</code>:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -147,24 +192,25 @@ associated model in the model test.</p>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>require 'spec_helper'
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;spec_helper&#39;</span>
 </span><span class='line'>
-</span><span class='line'>describe CallSheet do
+</span><span class='line'><span class="n">describe</span> <span class="no">CallSheet</span> <span class="k">do</span>
 </span><span class='line'>
-</span><span class='line'>  let(:call_sheet) { Factory(:call_sheet) }
-</span><span class='line'>  subject { call_sheet }
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:call_sheet</span><span class="p">)</span> <span class="p">{</span> <span class="no">Factory</span><span class="p">(</span><span class="ss">:call_sheet</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">subject</span> <span class="p">{</span> <span class="n">call_sheet</span> <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>  describe 'associations' do
-</span><span class='line'>    it { should belong_to(:draft) }
-</span><span class='line'>    it { should belong_to(:category) }
-</span><span class='line'>    it { should belong_to(:stage) }
-</span><span class='line'>  end
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>  <span class="n">describe</span> <span class="s1">&#39;associations&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:draft</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:category</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:stage</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Here is the <code>spec/support/factories/call_sheet.rb</code> factory:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -173,22 +219,23 @@ associated model in the model test.</p>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>FactoryGirl.define do
-</span><span class='line'>  factory :call_sheet do
-</span><span class='line'>    company_name "the company"
-</span><span class='line'>    address "the address"
-</span><span class='line'>    association :draft
-</span><span class='line'>    association :stage
-</span><span class='line'>    association :category
-</span><span class='line'>  end
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">FactoryGirl</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">factory</span> <span class="ss">:call_sheet</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">company_name</span> <span class="s2">&quot;the company&quot;</span>
+</span><span class='line'>    <span class="n">address</span> <span class="s2">&quot;the address&quot;</span>
+</span><span class='line'>    <span class="n">association</span> <span class="ss">:draft</span>
+</span><span class='line'>    <span class="n">association</span> <span class="ss">:stage</span>
+</span><span class='line'>    <span class="n">association</span> <span class="ss">:category</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>It&#8217;s associate with <code>draft</code>, <code>stage</code> and <code>category</code>.</p>
 
 <p>Now, run the spec test in my machine. Here&#8217;s the result:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -197,15 +244,16 @@ associated model in the model test.</p>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Top 3 slowest examples:
-</span><span class='line'>  CallSheet associations 
-</span><span class='line'>    8.33 seconds ./spec/models/call_sheet_spec.rb:14
-</span><span class='line'>  CallSheet associations 
-</span><span class='line'>    7.42 seconds ./spec/models/call_sheet_spec.rb:16
-</span><span class='line'>  CallSheet associations 
-</span><span class='line'>    6.76 seconds ./spec/models/call_sheet_spec.rb:15
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Top</span> <span class="mi">3</span> <span class="n">slowest</span> <span class="n">examples</span><span class="p">:</span>
+</span><span class='line'>  <span class="no">CallSheet</span> <span class="n">associations</span>
+</span><span class='line'>    <span class="mi">8</span><span class="o">.</span><span class="mi">33</span> <span class="n">seconds</span> <span class="o">.</span><span class="n">/spec</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">call_sheet_spec</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">14</span>
+</span><span class='line'>  <span class="no">CallSheet</span> <span class="n">associations</span>
+</span><span class='line'>    <span class="mi">7</span><span class="o">.</span><span class="mi">42</span> <span class="n">seconds</span> <span class="o">.</span><span class="n">/spec</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">call_sheet_spec</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">16</span>
+</span><span class='line'>  <span class="no">CallSheet</span> <span class="n">associations</span>
+</span><span class='line'>    <span class="mi">6</span><span class="o">.</span><span class="mi">76</span> <span class="n">seconds</span> <span class="o">.</span><span class="n">/spec</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">call_sheet_spec</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">15</span>
 </span><span class='line'>
-</span><span class='line'>Finished in 22.51 seconds</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="no">Finished</span> <span class="k">in</span> <span class="mi">22</span><span class="o">.</span><span class="mi">51</span> <span class="n">seconds</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>It&#8217;s very slow, because the <code>Draft</code>, <code>Stage</code>, <code>Category</code> is associate with other models too.
@@ -213,7 +261,7 @@ We should not care about that in the <code>CallSheet</code> model&#8217;s rspec 
 
 <p>So, I Changed <code>spec/models/call_sheet_spec.rb</code> to</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -230,28 +278,29 @@ We should not care about that in the <code>CallSheet</code> model&#8217;s rspec 
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>require 'spec_helper'
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;spec_helper&#39;</span>
 </span><span class='line'>
-</span><span class='line'>describe CallSheet do
+</span><span class='line'><span class="n">describe</span> <span class="no">CallSheet</span> <span class="k">do</span>
 </span><span class='line'>
-</span><span class='line'>  let(:project) { Factory.stub(:project) }
-</span><span class='line'>  let(:draft) { Factory.stub(:draft) }
-</span><span class='line'>  let(:stage) { Factory.stub(:stage) }
-</span><span class='line'>  let(:category) { Factory.stub(:category) }
-</span><span class='line'>  let(:call_sheet) { Factory(:call_sheet, draft: draft, stage: stage, category: category) }
-</span><span class='line'>  subject { call_sheet }
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:project</span><span class="p">)</span> <span class="p">{</span> <span class="no">Factory</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:project</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:draft</span><span class="p">)</span> <span class="p">{</span> <span class="no">Factory</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:draft</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:stage</span><span class="p">)</span> <span class="p">{</span> <span class="no">Factory</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:stage</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:category</span><span class="p">)</span> <span class="p">{</span> <span class="no">Factory</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:category</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:call_sheet</span><span class="p">)</span> <span class="p">{</span> <span class="no">Factory</span><span class="p">(</span><span class="ss">:call_sheet</span><span class="p">,</span> <span class="n">draft</span><span class="p">:</span> <span class="n">draft</span><span class="p">,</span> <span class="n">stage</span><span class="p">:</span> <span class="n">stage</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="n">category</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">subject</span> <span class="p">{</span> <span class="n">call_sheet</span> <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>  describe 'associations' do
-</span><span class='line'>    it { should belong_to(:draft) }
-</span><span class='line'>    it { should belong_to(:category) }
-</span><span class='line'>    it { should belong_to(:stage) }
-</span><span class='line'>  end
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>  <span class="n">describe</span> <span class="s1">&#39;associations&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:draft</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:category</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:stage</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>The result:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -260,15 +309,16 @@ We should not care about that in the <code>CallSheet</code> model&#8217;s rspec 
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Top 3 slowest examples:
-</span><span class='line'>  CallSheet associations 
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Top 3 slowest examples:
+</span><span class='line'>  CallSheet associations
 </span><span class='line'>    0.30077 seconds ./spec/models/call_sheet_spec.rb:13
-</span><span class='line'>  CallSheet associations 
+</span><span class='line'>  CallSheet associations
 </span><span class='line'>    0.0172 seconds ./spec/models/call_sheet_spec.rb:15
-</span><span class='line'>  CallSheet associations 
+</span><span class='line'>  CallSheet associations
 </span><span class='line'>    0.01644 seconds ./spec/models/call_sheet_spec.rb:14
 </span><span class='line'>
-</span><span class='line'>Finished in 0.33607 seconds</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>Finished in 0.33607 seconds
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Super fast now.</p>
@@ -648,6 +698,10 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/04/19/filter-rails-log-with-ack/">Filter rails log with ack</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/">Create a new FormBuilder instanece on Rails 3</a>
       </li>
     
@@ -661,10 +715,6 @@ GEM_PATH: env | grep GEM_PATH | awk '{ sub(/GEM_PATH=/, &quot;&quot;); print }'<
     
       <li class="post">
         <a href="/blog/2012/01/07/great-mac-and-ios-apps/">Great Mac and iOS Apps</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/10/textmate-and-rvm-gemset/">TextMate and RVM Gemset</a>
       </li>
     
   </ul>

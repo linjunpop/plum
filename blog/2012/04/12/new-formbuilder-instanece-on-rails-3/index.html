@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="As on rails 2 we can create a new ActionView::Helpers::FormBuilder
-instance with
+instance with 1
 ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template &hellip;">
   
 
@@ -86,11 +86,19 @@ ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template &hellip;">
 
 
 <div class="entry-content"><p>As on rails 2 we can create a new <code>ActionView::Helpers::FormBuilder</code>
-instance with
-<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template, {}, proc{})</code></p>
+instance with</p>
 
-<p>But on rails 3 this becomes
-<code>ActionView::Helpers::FormBuilder.new(:foobar, @foobar, this, {}, proc{})</code></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">ActionView</span><span class="o">::</span><span class="no">Helpers</span><span class="o">::</span><span class="no">FormBuilder</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:foobar</span><span class="p">,</span> <span class="vi">@foobar</span><span class="p">,</span> <span class="vi">@template</span><span class="p">,</span> <span class="p">{},</span> <span class="nb">proc</span><span class="p">{})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But on rails 3 this becomes</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">ActionView</span><span class="o">::</span><span class="no">Helpers</span><span class="o">::</span><span class="no">FormBuilder</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:foobar</span><span class="p">,</span> <span class="vi">@foobar</span><span class="p">,</span> <span class="n">this</span><span class="p">,</span> <span class="p">{},</span> <span class="nb">proc</span><span class="p">{})</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Just take a note.</p>
 </div>
@@ -136,6 +144,8 @@ instance with
         <a class="basic-alignment left" href="/blog/2012/03/09/use-factory-dot-stub-to-speedup-rspec-test/" title="Previous Post: Use Factory.stub to speedup Rspec test">&laquo; Use Factory.stub to speedup Rspec test</a>
       
       
+        <a class="basic-alignment right" href="/blog/2012/04/19/filter-rails-log-with-ack/" title="next Post: Filter rails log with ack">Filter rails log with ack &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -155,6 +165,10 @@ instance with
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/04/19/filter-rails-log-with-ack/">Filter rails log with ack</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/">Create a new FormBuilder instanece on Rails 3</a>
       </li>
     
@@ -168,10 +182,6 @@ instance with
     
       <li class="post">
         <a href="/blog/2012/01/07/great-mac-and-ios-apps/">Great Mac and iOS Apps</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/10/textmate-and-rvm-gemset/">TextMate and RVM Gemset</a>
       </li>
     
   </ul>

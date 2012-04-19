@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: mac - Jun.Blog</title>
+  <title>Filter rails log with ack - Jun.Blog</title>
   <meta name="author" content="Jun">
 
   
-  <meta name="description" content="Category: mac">
+  <meta name="description" content="Just a simple command to filter rails log with ack! 1
+$ tail -F log/development.log | ack FOOBAR ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://plum.iodot.orgblog/categories/mac">
+  <link rel="canonical" href="http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -61,36 +62,88 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Mac</h1>
+    
+      <h1 class="entry-title">Filter Rails Log With Ack</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2012-04-19T08:31:00+08:00" pubdate>Apr 19<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Just a simple command to filter rails log with ack!</p>
 
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/01/07/great-mac-and-ios-apps/">Great Mac and iOS Apps</a></h1>
-<time datetime="2012-01-07T19:11:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>07</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/app/'>app</a>, <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/mac/'>mac</a></span>
-</footer>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>tail -F log/development.log | ack FOOBAR
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Jun</span></span>
+
+      
+
+
+
+
+  
+
+<time datetime="2012-04-19T08:31:00+08:00" pubdate>Apr 19<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack/" data-via="linjunpop" data-counturl="http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/" title="Previous Post: Create a new FormBuilder instanece on Rails 3">&laquo; Create a new FormBuilder instanece on Rails 3</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -200,7 +253,10 @@
       var disqus_shortname = 'iodot';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack';
+        var disqus_url = 'http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: shell | Jun.Blog]]></title>
+  <link href="http://plum.iodot.org/blog/categories/shell/atom.xml" rel="self"/>
+  <link href="http://plum.iodot.org/"/>
+  <updated>2012-04-19T08:39:30+08:00</updated>
+  <id>http://plum.iodot.org/</id>
+  <author>
+    <name><![CDATA[Jun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Filter rails log with ack]]></title>
+    <link href="http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack/"/>
+    <updated>2012-04-19T08:31:00+08:00</updated>
+    <id>http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack</id>
+    <content type="html"><![CDATA[<p>Just a simple command to filter rails log with ack!</p>
+
+<p><code>bash
+$ tail -F log/development.log | ack FOOBAR
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

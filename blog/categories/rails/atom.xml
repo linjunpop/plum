@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | Jun.Blog]]></title>
   <link href="http://plum.iodot.org/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://plum.iodot.org/"/>
-  <updated>2012-04-12T14:42:10+08:00</updated>
+  <updated>2012-04-19T08:39:30+08:00</updated>
   <id>http://plum.iodot.org/</id>
   <author>
     <name><![CDATA[Jun]]></name>
@@ -14,6 +14,19 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Filter rails log with ack]]></title>
+    <link href="http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack/"/>
+    <updated>2012-04-19T08:31:00+08:00</updated>
+    <id>http://plum.iodot.org/blog/2012/04/19/filter-rails-log-with-ack</id>
+    <content type="html"><![CDATA[<p>Just a simple command to filter rails log with ack!</p>
+
+<p><code>bash
+$ tail -F log/development.log | ack FOOBAR
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Create a new FormBuilder instanece on Rails 3]]></title>
     <link href="http://plum.iodot.org/blog/2012/04/12/new-formbuilder-instanece-on-rails-3/"/>
     <updated>2012-04-12T14:28:00+08:00</updated>
@@ -21,13 +34,13 @@
     <content type="html"><![CDATA[<p>As on rails 2 we can create a new <code>ActionView::Helpers::FormBuilder</code>
 instance with</p>
 
-<p><code>Ruby
+<p><code>ruby
 ActionView::Helpers::FormBuilder.new(:foobar, @foobar, @template, {}, proc{})
 </code></p>
 
 <p>But on rails 3 this becomes</p>
 
-<p><code>Ruby
+<p><code>ruby
 ActionView::Helpers::FormBuilder.new(:foobar, @foobar, this, {}, proc{})
 </code></p>
 
@@ -48,7 +61,7 @@ associated model in the model test.</p>
 
 <p>The <code>app/models/call_sheet.rb</code>:</p>
 
-<p>```
+<p>```ruby
 require 'spec_helper'</p>
 
 <p>describe CallSheet do</p>
@@ -69,7 +82,7 @@ end
 
 <p>Here is the <code>spec/support/factories/call_sheet.rb</code> factory:</p>
 
-<p>```
+<p>```ruby
 FactoryGirl.define do
   factory :call_sheet do</p>
 
@@ -88,7 +101,7 @@ end
 
 <p>Now, run the spec test in my machine. Here's the result:</p>
 
-<p>```
+<p>```ruby
 Top 3 slowest examples:
   CallSheet associations</p>
 
@@ -113,7 +126,7 @@ We should not care about that in the <code>CallSheet</code> model's rspec test.<
 
 <p>So, I Changed <code>spec/models/call_sheet_spec.rb</code> to</p>
 
-<p>```
+<p>```ruby
 require 'spec_helper'</p>
 
 <p>describe CallSheet do</p>
@@ -138,7 +151,7 @@ end
 
 <p>The result:</p>
 
-<p>```
+<p>```bash
 Top 3 slowest examples:
   CallSheet associations</p>
 
